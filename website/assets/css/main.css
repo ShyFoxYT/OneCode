@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Victor+Mono:wght@700&display=swap");
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+    background-color: #e8e8e8;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Red Hat Mono";
+    letter-spacing: -1px;
+}
+
+h1,
+h2 {
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 1.65rem;
+}
+
+h3,
+h4 {
+    margin-top: -0.5px;
+}
+
+span,
+p,
+a {
+    font-family: "Victor Mono";
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+nav {
+    padding-inline: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e8e8e8;
+    border-bottom: 1px #000 solid;
+    height: 60px;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+nav a {
+    border-bottom: 1px #00000000 solid;
+    transition: .5s;
+}
+nav a:hover {
+    border-bottom: 1px #000 solid;
+    transition: .5s;
+}
+
+.right {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.more-drp {
+    height: 30px;
+}
+.more-drp ul {
+    display: none;
+    list-style-type: none;
+}
+
+.more-drp:hover ul,
+.more-drp ul:hover {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    border: 1px solid #000;
+    padding: 10px;
+    right: 10px;
+    top: 45px;
+    gap: 5px;
+    background-color: #fff;
+}
+
+.sitename {
+    font-family: "Major Mono Display", serif;
+    font-weight: bolder;
+    font-size: 1.67rem;
+    margin-top: 0;
+}
+
+.main-container {
+    padding-inline: 70px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+    border: 1px solid #000;
+    padding: 5px;
+    margin-top: 4px;
+    background-color: #fff;
+    color: #000;
+    font-size: 1rem;
+    font-family: "Victor Mono", monospace;
+    transition: 1s;
+}
+
+button:hover {
+    transition: 0.7s;
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #000;
+    grid-area: foot;
+    padding: 5px;
+    text-align: center;
+    padding-inline: 20px;
+}
+
+footer ul {
+    list-style: none;
+}
+
+.link-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row: 1fr;
+    grid-template-areas: "shyfox onecode rights";
+    margin-top: 10px;
+}
+
+.shyfox {
+    grid-area: shyfox;
+}
+
+.onecode {
+    grid-area: onecode;
+}
+
+.rights {
+    grid-area: rights;
+}
+
+.welcomeart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#welcome {
+    text-align: center !important;
+    font-size: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0;
+}
+.types{
+    display: flex;
+    justify-items: baseline;
+    align-items: baseline;
+    padding-top: 10px;
+}
+.typedot{
+    animation: blink-caret .8s linear infinite;
+    background-color: grey;
+    color: #ffffff00;
+    height: fit-content;
+    font-size: 24px;
+}
+
+.dir{
+    color: #0000006f;
+    font-size: 10px;
+}
+
+.main-container .not-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+@keyframes blink-caret {
+        from, to {
+          background-color: transparent;
+        }
+        50% {
+          background-color: grey;
+        }
+      }

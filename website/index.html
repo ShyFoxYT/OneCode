@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start | OneDev</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="left">
+            <a href="/">
+                <h1 class="sitename">OneCode</h1>
+            </a>
+        </div>
+        <div class="right">
+            <a href="/">
+                <span>home</span>
+            </a>
+            <a href="/posts">
+                <span>posts</span>
+            </a>
+            <a href="/categories">
+                <span>categories</span>
+            </a>
+            <div class="more-drp">
+                <span>more...</span>
+                <ul>
+                    <li><a href="/rights/privacy">privacy</a></li>
+                    <li><a href="/rights/contact">contact</a></li>
+                </ul>
+            </div>
+
+
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <article class="welcomeart">
+            <div class="types">
+                <h1 id="welcome">Welcome,</h1>
+                <div class="typedot">|</div>
+            </div>
+
+            <script>
+                const languages = [
+                    "Welcome,",
+                    "Vitajte,",
+                    "Willkommen,",
+                    "Bienvenida,",
+                    "Bienvenue,",
+                    "Benvenuta,",
+                    "いらっしゃいませ,",
+                    "欢迎,",
+                    "Välkommen,",
+                    "مرحباً,",
+                    "환영,"
+                ];
+                let currentLanguageIndex = 0;
+                const welcomeElement = document.getElementById("welcome");
+                const typesElement = document.getElementById("types");
+
+                function typeMessage(text, callback) {
+
+                    let currentText = "";
+                    let currentIndex = 0;
+
+                    const typingInterval = setInterval(() => {
+                        if (currentIndex === text.length) {
+                            clearInterval(typingInterval);
+                            callback();
+                        } else {
+                            currentText += text[currentIndex];
+                            welcomeElement.textContent = currentText;
+                            currentIndex++;
+                        }
+                    }, 100);
+                }
+
+                function changeLanguage() {
+                    const nextLanguage = languages[currentLanguageIndex];
+                    typeMessage(nextLanguage, () => {
+                        setTimeout(() => {
+                            typeMessage("", () => {
+                                currentLanguageIndex = (currentLanguageIndex + 1) % languages.length;
+                                changeLanguage();
+                            });
+                        }, 1500);
+                    });
+                }
+                typeMessage(languages[currentLanguageIndex], () => {
+                    currentLanguageIndex = (currentLanguageIndex + 1) % languages.length;
+                    setTimeout(changeLanguage, 2000);
+                })
+
+            </script>
+
+            <h3>to <span class="sitename">OneCode</span>!</h3>
+            <span>Here you will learn everything you need for a awsome looking website!</span>
+        </article>
+
+        <article>
+            <h2>Ready</h2>
+            <h3>for the next level?</h3>
+            <p>Beginn your first lection here!</p>
+            <a href="/lections/lection1"><button>Lection 1</button></a>
+
+        </article>
+
+        <article>
+            <h2>Costs?</h2>
+            <h3>Free, forever!</h3>
+            <p>We don't charge you an extreme amount, our server costs are compersated by our other projects, donations.
+                <br>
+                No hidden fees! We promise!
+            </p>
+        </article>
+        <article>
+            <h2>Examples?</h2>
+            <h3>Yes we have!</h3>
+            <p>
+                We have some examples ready for you!
+            </p>
+
+            <a href="/examples"><button>Take me there!</button></a>
+        </article>
+
+    </div>
+
+    <footer>
+
+        <p>Presented to you by ShyFox © 2023</p>
+
+        <div class="link-sections">
+            <div class="shyfox">
+                <h4>ShyFox</h4>
+                <ul>
+                    <li><a href="https://shyfox.de">ShyFox.de</a></li>
+                    <li><a href="https://shyfox.de/other-projects">other projects</a></li>
+                    <li><a href="https://shyfox.de/about-me">about me</a></li>
+                    <li><a href="https://shyfox.de/socials">socials</a></li>
+                    <li><a href="https://shyfox.de/privacy-promise">privacy promise</a></li>
+                </ul>
+            </div>
+            <div class="onecode">
+                <h4>OneCode</h4>
+                <ul>
+                    <li><a href="/">home</a></li>
+                    <li><a href="/posts">posts</a></li>
+                    <li><a href="/categories">categories</a></li>
+                    <li><a href="/lections">lections</a></li>
+                    <li><a href="/examples">examples</a></li>
+                    <li><a href="/github">GitHub</a></li>
+                </ul>
+            </div>
+            <div class="rights">
+                <h4>Rights & More</h4>
+                <ul>
+                    <li><a href="/rights/privacy">Privacy Policy</a></li>
+                    <li><a href="/rights/contact">Contact</a></li>
+                    <li><a href="/rights/imprint">Imprint</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+    </footer>
+
+</body>
+
+</html>
